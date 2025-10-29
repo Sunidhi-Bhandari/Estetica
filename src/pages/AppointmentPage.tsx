@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "../styles/AppointmentPage.css";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
-import { setAppointmentItems, updateItemQty, setDiscountPercent } from "../features/appointment/appointmentSlice";
+import { updateItemQty, setDiscountPercent } from "../features/appointment/appointmentSlice";
 import { setAppointmentItems as setFromCart } from "../features/appointment/appointmentSlice";
 
 const schema = yup.object({
@@ -27,14 +27,14 @@ const AppointmentPage: React.FC = () => {
     if (appointment.items.length === 0 && cartItems.length) {
       dispatch(setFromCart(cartItems));
     }
-  }, []);
+  }, [appointment.items.length, cartItems, dispatch]);
 
   const subtotal = appointment.items.reduce((a,b)=> a + b.price * b.qty, 0);
   const taxes = +(subtotal * 0.1).toFixed(0);
   const discount = +(subtotal * (appointment.discountPercent / 100));
   const total = subtotal + taxes - discount;
 
-  const { control, register, handleSubmit, formState: { errors } } = useForm<FormData>({
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: yupResolver(schema)
   });
 
