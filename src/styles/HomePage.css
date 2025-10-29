@@ -1,0 +1,5 @@
+.home{ padding:30px 0; text-align:center }
+.lead{ color:var(--muted) }
+.actions{ display:flex; gap:12px; justify-content:center; margin-top:18px }
+.btn{ padding:10px 14px; background:var(--accent); color:white; border-radius:8px }
+.btnGhost{ padding:10px 14px; border:1px solid rgba(255,255,255,0.06); border-radius:8px; color:var(--text) }

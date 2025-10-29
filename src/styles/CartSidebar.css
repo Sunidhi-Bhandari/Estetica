@@ -1,0 +1,23 @@
+.backdrop{
+  position:fixed; right:0; top:0; bottom:0;
+  width:0; pointer-events:none; transition:all .2s ease;
+}
+.show{ width:100%; pointer-events:auto; background:rgba(0,0,0,0.4) }
+.panel{
+  width:360px; max-width:100%;
+  height:100%; background:var(--surface); padding:16px; box-shadow:-10px 0 30px rgba(0,0,0,0.6);
+  float:right;
+}
+.head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:12px }
+.close{ background:transparent; border:0; color:var(--muted) }
+.list{ overflow:auto; max-height:60vh; display:flex; flex-direction:column; gap:12px }
+.item{ display:flex; gap:12px; align-items:center; padding:8px; border-radius:8px; background:rgba(255,255,255,0.01) }
+.item img{ width:60px; height:60px; object-fit:cover; border-radius:6px }
+.meta{ flex:1 }
+.controls{ display:flex; gap:8px; align-items:center; margin-top:8px }
+.controls button{ padding:6px 8px; border-radius:6px; border:1px solid rgba(255,255,255,0.04) }
+.right{ display:flex; flex-direction:column; align-items:flex-end; gap:8px }
+.remove{ background:transparent; border:0; color:var(--muted); font-size:13px }
+.empty{ color:var(--muted) }
+.foot{ margin-top:12px; display:flex; flex-direction:column; gap:8px; }
+.checkout{ background:var(--accent); color:white; padding:10px; border-radius:8px; border:0 }
