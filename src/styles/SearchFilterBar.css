@@ -1,22 +1,47 @@
-.bar{
-  display:flex;
-  gap:12px;
-  align-items:center;
-  margin-bottom:16px;
+.bar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
 }
-.search{
-  flex:1;
-  padding:10px 12px;
-  border-radius:8px;
-  border:1px solid rgba(255,255,255,0.04);
-  background:transparent;
-  color:var(--text);
+
+.search {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
 }
-.select{
-  padding:10px;
-  border-radius:8px;
-  border:1px solid rgba(255,255,255,0.04);
-  background:transparent;
-  color:var(--text);
-  min-width:160px;
+
+.search:focus {
+  border-color: var(--accent);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* dropdown styling */
+.select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-size: 14px;
+  min-width: 160px;
+  outline: none;
+  appearance: none;
+  transition: 0.2s;
+}
+
+.select:focus {
+  border-color: var(--accent);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.select option {
+  background-color: #0f1724; 
+  color: var(--text);
 }
